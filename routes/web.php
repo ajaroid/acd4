@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 // root path
 Route::get('/', [ExampleController::class, 'index']);
+Route::get('/example1', [ExampleController::class, 'example1']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}/edit', [CategoryController::class, 'edit']);

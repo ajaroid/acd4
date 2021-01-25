@@ -8,11 +8,11 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return 'list kategori';
+        return view('categories.index');
     }
 
     public function edit(Request $request)
     {
-        return 'Sedang mengedit item ' . $request->id;
+        return view('categories.edit');
     }
 }

@@ -8,6 +8,11 @@ class ExampleController extends Controller
 {
     public function index()
     {
-        return view('starter');
+        return view('example.index');
+    }
+
+    public function example1()
+    {
+        return view('example.example1');
     }
 }
