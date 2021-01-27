@@ -18,9 +18,9 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('description');
-            $table->decimal('purchase_price');
+            $table->decimal('purchase_price')->nullable();
             $table->decimal('sale_price');
-            $table->integer('stock');
+            $table->integer('stock')->default(0);
             $table->foreignId('category_id')->constrained();
         });
     }
