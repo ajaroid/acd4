@@ -10,7 +10,10 @@ Edit Category
     @method('PUT')
     <div class="mb-3">
         <label>Name</label>
-        <input name="name" value="{{ $category->name }}" />
+        <input name="name" value="{{ old('name', $category->name) }}" />
+        @error('name')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div class="mb-3">
         <button class="btn btn-primary">Submit</button>
