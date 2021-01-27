@@ -2,6 +2,6 @@
 
 
 @section('content')
-<h1>Example index</h1>
-<p>Ini konten index</p>
+<h1>Example 2</h1>
+<p>Ini konten example 2</p>
 @endsection

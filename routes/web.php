@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// root path
-Route::get('/', [ExampleController::class, 'index']);
 Route::get('/example1', [ExampleController::class, 'example1']);
+Route::get('/example2', [ExampleController::class, 'example2']);
 
+// CRUD
+// create
+// read
+// update
+// delete
+// convention
+// ProductController
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}/edit', [CategoryController::class, 'edit']);
+Route::get('/categories/create', [CategoryController::class, 'create']);
