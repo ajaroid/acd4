@@ -24,6 +24,5 @@ Route::get('/example2', [ExampleController::class, 'example2']);
 // delete
 // convention
 // ProductController
-Route::get('/categories', [CategoryController::class, 'index']);
-Route::get('/categories/{id}/edit', [CategoryController::class, 'edit']);
-Route::get('/categories/create', [CategoryController::class, 'create']);
+Route::get('categories/example', [CategoryController::class, 'example']);
+Route::resource('categories', CategoryController::class);

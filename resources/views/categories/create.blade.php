@@ -1,17 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Tambah kategori</h1>
-
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
-<p>kategori</p>
+    <form method="POST" action="/categories">
+        @csrf
+        <div class="mb-3">
+            <label>Name</label>
+            <input name="name" />
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
 @endsection
