@@ -209,6 +209,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          <li class="nav-item">
+              <form action="/logout" method="POST">
+                  @csrf
+                  <button type="submit" href="#" class="btn btn-danger ">Logout</button>
+              </form>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

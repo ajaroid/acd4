@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,20 @@ Route::get('/example2', [ExampleController::class, 'example2']);
 // convention
 // ProductController
 Route::get('categories/example', [CategoryController::class, 'example']);
-Route::resource('categories', CategoryController::class);
 
-Route::resource('products', ProductController::class);
-Route::resource('suppliers', SupplierController::class);
-Route::resource('purchases', PurchaseController::class)->only(['create', 'store', 'index', 'show']);
+// harus login
+Route::middleware('auth')->group(function () {
+    Route::resource('categories', CategoryController::class);
+    Route::resource('products', ProductController::class);
+    Route::resource('suppliers', SupplierController::class);
+    Route::resource('purchases', PurchaseController::class)->only(['create', 'store', 'index', 'show']);
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
+// harus belum login
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showFormLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login']);
+});
+
